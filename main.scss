@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,700&display=swap');
+
+$back: #212121;
+$white: #fff;
+$primary: #F7B500;
+$secondary: $white;
+
+$font-size-lg: 4em;
+$font-size-md: 1.5em;
+$font-size-sm: 1em;
+
+$base: 16;
+
+$br-xl: #{1980 / $base}rem;
+$br-lg: #{1240 / $base}rem;
+$br-xm: #{960 / $base}rem;
+$br-md: #{768 / $base}rem;
+$br-sm: #{540 / $base}rem;
+
+$font-family: 'Merriweather', serif;
+
+html {
+  font-size: 100%;
+
+  @media screen and (min-width: $br-sm) and (max-width: $br-md) {
+    font-size: 90%;
+  }
+
+  @media screen and (max-width: $br-sm) {
+    font-size: 75%;
+  }
+}
+
+body {
+  margin: auto;
+  background: $back;
+  font-family: $font-family;
+  line-height: 1.7;
+}
+
+.main {
+  display: flex;
+  box-sizing: border-box;
+  min-height: 100vh;
+  flex-direction: row;
+  align-items: flex-end;
+  max-width: $br-xm;
+  margin: auto;
+
+  @media screen and (max-width: $br-md) {
+    padding: 2em;
+  }
+}
+
+.container {
+  margin-bottom: 4em; 
+  @media screen and (max-width: $br-md) {
+    margin-bottom: 2em;
+  }
+
+  @media screen and (max-width: $br-sm) {
+    margin-bottom: auto;
+  }
+
+  > h1, p{
+    color: $white;
+  }
+  
+  h1 {
+    font-size: $font-size-lg;
+  }
+
+  p { 
+    font-size: $font-size-md;
+  }
+}
+
+.pt_1 {
+  padding-top: 2em;
+}
+
+.pt_2 {
+  padding-top: 2em;
+}
+
+.flex {
+  display: flex;
+
+  .wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.button {
+  --button-color: #{$white};
+  text-decoration: none;
+  color: var(--button-color);
+  padding: .5em 0;
+  
+  &:not(:last-child) {
+    margin-right: 4em;
+  }
+
+  &__primary {
+    --button-color: #{$primary};
+    font-size: $font-size-md;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__secondary {
+    font-size: $font-size-sm;
+
+    &:hover {
+      --button-color: #{$primary};
+    }
+  }
+}
